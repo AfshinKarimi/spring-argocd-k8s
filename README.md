@@ -8,5 +8,3 @@ This is demo for spring, k8s and spring project
 - [@AfshinKarimi](https://www.github.com/AfshinKarimi)
 
 
-
-
