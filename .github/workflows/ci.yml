@@ -61,8 +61,8 @@ jobs:
           set -x
           echo "promoting into dev environment!"
           git config --global user.email afshin.karimi28@gmail.com && git config --global user.name afshin.karimi
-          echo "cloning config repo $CONFIG_REPO_NAME"
-          git clone https://oauth2:${{ secrets.APT_ARGO }}@github.com/${{ github.repository_owner }}/$CONFIG_REPO_NAME.git
+          echo "cloning config repo k8s-manifest"
+          git clone https://oauth2:${{ secrets.APT_ARGO }}@github.com/${{ github.repository_owner }}/k8s-manifest.git
           cd $CONFIG_REPO_NAME
           echo "checkout main branch"
           git checkout main
