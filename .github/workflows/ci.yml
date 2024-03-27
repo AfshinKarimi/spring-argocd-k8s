@@ -65,6 +65,7 @@ jobs:
           git clone https://oauth2:${{ secrets.APT }}@github.com/${{ github.repository_owner }}/k8s-manifest.git
           cd k8s-manifest
           echo "checkout main branch"
+          echo "print  apt secret ${{ secrets.APT }}"
           git checkout main
           echo "Update image tag in deployment.yaml"
           echo "1234" >> resource/deployment.yaml
