@@ -75,7 +75,6 @@ jobs:
       - name: Update image tag in deployment.yaml
         run: |
           echo "Update image tag in deployment.yaml"
-          echo "1234" >> resource/deployment.yaml
 
       - name: Commit and Push Changes
         run: |
