@@ -55,15 +55,15 @@ jobs:
           tags: afshin28/spring-argocd-k8s:${{ github.sha }}
   promote-to-dev-environment:
     runs-on: ubuntu-latest
-    needs: docker-build-push
+    needs: docker-build-push 
     steps:
       - run: |
           set -x
           echo "promoting into dev environment!"
           git config --global user.email afshin.karimi28@gmail.com && git config --global user.name afshin.karimi
-          echo "cloning config repo k8s-manifest"
-          git clone https://${{ secrets.APT_ARGO }}@github.com/AfshinKarimi/k8s-manifest.git
-          cd k8s-manifest
+          echo "cloning config repo $CONFIG_REPO_NAME"
+          git clone https://oauth2:${{ secrets.APT_ARGO }}@github.com/${{ github.repository_owner }}/$CONFIG_REPO_NAME.git
+          cd $CONFIG_REPO_NAME
           echo "checkout main branch"
           git checkout main
           echo "Update image tag in deployment.yaml"
